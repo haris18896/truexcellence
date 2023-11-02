@@ -1,4 +1,4 @@
-package com.true.xcellence;
+package com.truexcellence;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

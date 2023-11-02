@@ -1,4 +1,4 @@
-package com.true.xcellence;
+package com.truexcellence;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

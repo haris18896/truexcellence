@@ -31,7 +31,7 @@ const Splash = () => {
 
   return (
     <View style={styles.container}>
-      <Image source={LogoBig} resizeMode={'cover'} />
+      <Image source={LogoBig} style={styles.splashLogo} resizeMode={'cover'} />
     </View>
   );
 };
@@ -42,7 +42,12 @@ const styles = StyleSheet.create({
     position: 'relative',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: 50,
   },
+  splashLogo: {
+    width: 370,
+    height: 250,
+  }
 });
 
 export {Splash};
