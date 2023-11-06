@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {View, Image, StyleSheet, ActivityIndicator} from 'react-native';
+import {
+  View,
+  Image,
+  StyleSheet,
+  SafeAreaView,
+  ActivityIndicator,
+} from 'react-native';
 
 // ** Third Party Packages
 import {WebView} from 'react-native-webview';
@@ -21,17 +27,19 @@ function Main() {
           <ActivityIndicator size="large" color="#7e1313" />
         </View>
       )}
-      <WebView
-        source={{uri: 'https://truexcellence.web.app/'}}
-        originWhitelist={['*']}
-        style={styles.webview(isLoading)}
-        javaScriptEnabled={true}
-        domStorageEnabled={true}
-        useWebKit={true}
-        mixedContentMode="always"
-        onLoad={handleWebViewLoad}
-        onLoadEnd={handleWebViewLoad}
-      />
+      <SafeAreaView style={styles.WebViewContainer}>
+        <WebView
+          source={{uri: 'https://www.truexcellence.rqapps.com'}}
+          originWhitelist={['*']}
+          style={styles.webview(isLoading)}
+          javaScriptEnabled={true}
+          domStorageEnabled={true}
+          useWebKit={true}
+          mixedContentMode="always"
+          onLoad={handleWebViewLoad}
+          onLoadEnd={handleWebViewLoad}
+        />
+      </SafeAreaView>
     </View>
   );
 }
@@ -40,6 +48,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: 'relative',
+  },
+  WebViewContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
   },
   webview: isLoading => ({
     flex: isLoading ? 0 : 1,
